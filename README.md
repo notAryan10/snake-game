@@ -2,7 +2,7 @@
 
 A simple and interactive Snake Game built using React.js. The player controls a snake that moves in a grid, consumes food to grow, and avoids collisions to keep the game going.
 
-🚀 Features
+**🚀 Features**
 
 Move the snake using arrow keys.
 
@@ -12,9 +12,8 @@ Game Over when the snake collides with itself or the wall.
 
 Randomly generated food on the grid.
 
-Dynamic speed adjustments (optional enhancement).
 
-🛠️ Technologies Used
+**🛠️ Languages Used**
 
 React.js (Functional Components + Hooks)
 
@@ -22,7 +21,7 @@ JavaScript
 
 CSS Grid for game layoutt
 
-🎮 How to Play
+**🎮 How to Play**
 
 Use the Arrow Keys (⬆️⬇️⬅️➡️) to move the snake.
 
