@@ -71,18 +71,5 @@ checkCollision(head) → Ends game if snake collides with itself or walls.
 
 checkFood(head, newSnake) → Grows snake and places new food.
 
-🔥 Possible Enhancements
 
-✅ Scoring System – Display the player's score.
-✅ Increase Speed – Make the game harder over time.
-✅ Touch Controls – Support for mobile users.
-✅ Multiplayer Mode – Compete against AI or another player.
-
-🏗️ Contributing
-
-Feel free to fork and enhance the project! If you add new features, consider submitting a pull request.
-
-📜 License
-
-This project is open-source and available under the MIT License.
 
