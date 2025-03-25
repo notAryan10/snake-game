@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  padding: 20px;
 }
 
 .App-logo {
@@ -35,4 +36,12 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.game-board {
+  display: inline-grid;
+  grid-template-columns: repeat(20, 20px);
+  background-color: #282c34;
+  padding: 10px;
+  border-radius: 5px;
 }
