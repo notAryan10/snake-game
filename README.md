@@ -18,9 +18,9 @@ Dynamic speed adjustments (optional enhancement).
 
 React.js (Functional Components + Hooks)
 
-JavaScript (ES6+)
+JavaScript
 
-CSS Grid for game layout
+CSS Grid for game layoutt
 
 🎮 How to Play
 
