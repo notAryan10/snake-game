@@ -1,6 +1,10 @@
 .App {
   text-align: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
   padding: 20px;
+  color: #fff;
+  overflow: hidden;
 }
 
 .App-logo {
@@ -39,39 +43,146 @@
 }
 
 .game-board {
-  display: inline-grid;
-  grid-template-columns: repeat(20, 20px);
-  background-color: #282c34;
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.2);
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.game-board:hover {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+  transform: scale(1.01);
 }
 
 .row {
-  display: contents;
+  display: flex;
 }
 
 .cell {
-  width: 20px;
-  height: 20px;
-  border: 1px solid #1a1c22;
-  box-sizing: border-box;
+  width: 25px;
+  height: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  margin: 1px;
+  transition: all 0.15s ease;
 }
 
 .snake {
-  background-color: #4CAF50;
+  background: #4ecca3;
   border-radius: 4px;
+  transform: scale(0.95);
+  transition: all 0.15s ease;
+  box-shadow: 0 0 10px rgba(78, 204, 163, 0.5);
+}
+
+.snake-head {
+  background: #2ab7ca;
+  transform: scale(1);
+  box-shadow: 0 0 15px rgba(42, 183, 202, 0.7);
+  z-index: 2;
 }
 
 .food {
-  background-color: #f44336;
+  background: #ff2e63;
   border-radius: 50%;
+  animation: pulse 1s ease infinite;
+  box-shadow: 0 0 15px rgba(255, 46, 99, 0.5);
+  transform: scale(0.8);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    box-shadow: 0 0 15px rgba(255, 46, 99, 0.5);
+  }
+  50% {
+    transform: scale(0.9);
+    box-shadow: 0 0 20px rgba(255, 46, 99, 0.7);
+  }
+  100% {
+    transform: scale(0.8);
+    box-shadow: 0 0 15px rgba(255, 46, 99, 0.5);
+  }
 }
 
 .score {
-  font-size: 24px;
+  font-size: 1.5rem;
+  margin: 20px 0;
+  color: #4ecca3;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  animation: scoreUpdate 0.3s ease-out;
+}
+
+@keyframes scoreUpdate {
+  0% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.game-over {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.9);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.game-over h2 {
+  color: #ff2e63;
   margin-bottom: 20px;
 }
+
+.game-over button {
+  background: #4ecca3;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.game-over button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(78, 204, 163, 0.5);
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #4ecca3;
+  }
+  to {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #4ecca3;
+  }
+}
+
 h1 {
-  color: #282c34;
-  margin-bottom: 20px;
+  font-size: 3rem;
+  margin: 20px 0;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  animation: glow 2s ease-in-out infinite alternate;
 }
